@@ -31,7 +31,7 @@ namespace ModernDesign {
             DragMove();
         }
 
-        //close
+        //close form
         private void btn_Close_Click(object sender, RoutedEventArgs e)
         {
             this.Close();

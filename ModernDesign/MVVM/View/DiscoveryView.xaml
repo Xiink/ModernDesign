@@ -4,10 +4,40 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ModernDesign.MVVM.View"
+             xmlns:viewModel="clr-namespace:ModernDesign.MVVM.ViewModel"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
              Background="#1B1B1B">
+
+    <UserControl.DataContext>
+        <viewModel:DiscoveryViewModel/>
+    </UserControl.DataContext>
+
     <Grid>
-            
+        <Slider Margin="24,79,-24,-79"
+                Height="25"
+                Width="100"
+                Value="{Binding MyValue}"></Slider>
+
+        <TextBox Name="SearchBox"
+                 Width="250"
+                 Height="40"
+                 VerticalAlignment="Top"
+                 HorizontalAlignment="Left"
+                 Margin="0,10,0,0"
+                 Text="{Binding SearchName, UpdateSourceTrigger=PropertyChanged}">
+            <TextBox.Style>
+                <Style  TargetType="TextBox" BasedOn="{StaticResource ModernTextBox}">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding SearchName}" Value="0">
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBox.Style>
+        </TextBox>
+        <!--                 Style="{StaticResource ModernTextBox}"-->
+        <TextBox Name="testbox"
+                 Text="{Binding SearchName, UpdateSourceTrigger=PropertyChanged}" Margin="25,68,579,342"/>
+
     </Grid>
 </UserControl>

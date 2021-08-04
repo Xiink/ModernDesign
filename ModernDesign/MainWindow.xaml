@@ -77,6 +77,7 @@
                        HorizontalAlignment="Left"
                        Margin="5"
                        Grid.Column="1"
+                       Name="ttBox"
                        Style="{StaticResource ModernTextBox}"/>
 
                 <ContentControl Grid.Row="1"
